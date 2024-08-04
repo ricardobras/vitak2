@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Aceitação de Cookies</title>
+    <style>
+        body {
+			background-image: url('vitak2.png');
+			background-size: 100%;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+     
+        }
+        .cookie-banner {
+            position: fixed;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            max-width: 100%;
+            width: 50%;
+        }
+        .cookie-banner p {
+            margin: 0 0 20px 0;
+        }
+        .cookie-banner a {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cookie-banner a:hover {
+            background-color: #45a049;
+        }
+        .content {
+            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco com 80% de opacidade */
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 100%;
+            width: 100%;
+			height: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="content"> 
+	
+
+    <div class="cookie-banner" id="cookie-banner">
+        <p>Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com nossa <b>política de cookies.</b></p>
+        <a href='https://ev.braip.com/ref?pv=pro8m9em&af=afio8md207' class="btn">Aceitar</a>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            // Ocultar a barra de cookies
+            document.getElementById('cookie-banner').style.display = 'none';
+
+            // Salvar a aceitação dos cookies no local storage
+            localStorage.setItem('cookiesAccepted', 'true');
+        }
+
+        // Verificar se o usuário já aceitou os cookies
+        if (localStorage.getItem('cookiesAccepted') === 'false') {
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+    </script>
+</div>
+</body>
+</html>
